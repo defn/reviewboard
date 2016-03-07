@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+function bootstrap {
+  local shome="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
+  source "$shome/script/profile"
+
+  pkg ensure devel/patch
+
+  app compile virtualenv
+  ln -nfs "../vendor/virtualenv/bin/rb-site" "$shome/bin/"
+}
+
+bootstrap
