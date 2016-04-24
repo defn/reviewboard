@@ -12,7 +12,7 @@ function bootstrap {
       ;;
   esac
 
-  block compile virtualenv
+  env PYTHON=python block compile virtualenv
   ln -nfs "../vendor/virtualenv/bin/rb-site" "$shome/bin/"
 }
 
